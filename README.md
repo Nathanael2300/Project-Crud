@@ -117,7 +117,6 @@ Este projeto foi criado com foco em:
 
 * Implementar integração com **MySQL** usando Sequelize ou Knex
 * Criar camada de serviços (Service Layer)
-* Adicionar validações mais robustas (Joi ou Zod)
 * Criar testes de integração completos
 
 ---
