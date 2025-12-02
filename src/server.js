@@ -55,6 +55,35 @@ app.post("/cars", (req, res) => {
         carro: req.body
     });
 });
+
+app.put("/cars", (req, res) => {
+    const { nome, modelo, marca, ano, preco } = req.body;
+
+    let mensagem = ""
+    
+    if(nome) {
+        mensagem += "Nome do carro alterado com sucesso!!!"
+    }
+
+    if(modelo) {
+        mensagem += "Modelo do carro alterado com sucesso!!!"
+    }
+
+    if(marca) {
+        mensagem += "Marca do carro alterado com sucesso!!!"
+    }
+
+    if(ano) {
+        mensagem += "Ano do carro alterado com sucesso!!!"
+    }
+
+    if(preco) {
+        mensagem += "Preco do carro alterado com sucesso!!!"
+    }
+    res.json({ mensagem: mensagem.trim() })
+    
+})
+
 const PORT = 3003
 
 app.listen(PORT, () => console.log(`A api esta roando em: http:localhost:${PORT}`));
