@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const helmet = require("helmet")
+const helmet = require("helmet");
 const app = express()
 
 app.use(express.json())
@@ -45,7 +45,7 @@ app.get("/cars", (req, res) => {
 app.get("/cars/:id", (req, res) => {
         const { id } = req.params
         const findIdCar = list.find(find => find.id == id)
-        res.json(findIdCar)
+        res.json([findIdCar])
 });
 
 app.post("/cars", (req, res) => {
@@ -71,7 +71,7 @@ app.put("/cars", (req, res) => {
     if(marca) { mensagem += "Marca do carro alterado com sucesso!!!" }
     if(ano) { mensagem += "Ano do carro alterado com sucesso!!!" }
     if(preco) { mensagem += "Preco do carro alterado com sucesso!!!" }
-    res.json({ mensagem: mensagem.trim() })
+    res.json({ mensagem: mensagem.trim() });
     
 });
 
@@ -88,7 +88,7 @@ app.delete("/cars/:id", (req, res) => {
     res.json({
         carroDeletado: carroDeletado,
         mensagem: `${carroDeletado.nome} deletado com sucesso!!!`
-    })
+    });
 });
 const PORT = 3003
 
