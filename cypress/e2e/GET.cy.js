@@ -1,10 +1,7 @@
 class SubjectApi {
   requestHTTP = ({ method, url }) => {
       return () => {
-          return cy.api({
-              method,
-              url,
-          });
+          return cy.api({ method, url });
       }
   }
 }

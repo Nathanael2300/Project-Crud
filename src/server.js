@@ -51,13 +51,13 @@ app.get("/cars/:id", (req, res) => {
 app.post("/cars", (req, res) => {
     const { nome, modelo, marca, ano, preco } = req.body;
 
-    if(!nome || !marca || !preco) {
+    if(!nome ||!modelo || !marca || !ano || !preco) {
         return res.status(400).json({
-            error: "Campos (nomes, marca e preco), são obrigatorios!!!"
+            error: "Campos (nomes, modelo,marca, ano e preco), são obrigatorios!!!"
         });
     }
     res.json({
-        ensagem: "Carro adicionado com sucesso!!!",
+        mensagem: "Carro adicionado com sucesso!!!",
         carro: req.body
     });
 });
